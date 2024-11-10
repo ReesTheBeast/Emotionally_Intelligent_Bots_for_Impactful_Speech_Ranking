@@ -1,1 +1,1 @@
-no requirements, :)
+Python 3.12
