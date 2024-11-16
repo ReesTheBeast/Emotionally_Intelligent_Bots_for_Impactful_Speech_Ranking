@@ -1,34 +1,124 @@
-The EIBFISR is a Python-based open source tool designed by Rees to analyze and rank speeches by evaluating the emotional intensity and effectiveness of specific traits, such as confidence, empathy, enthusiasm, and authority. This script processes the text of a speech, identifies key emotional indicators through keyword-based analysis, and adjusts the importance of each trait based on the frequency and presence of these keywords. The goal of the EIBFISR is to provide a quantitative assessment of how well a speaker conveys different emotions, which can be used to evaluate public speaking performances or improve speech delivery. The speakers speech is then ranked in an Emotionally driven bot simulation, providing statistical information for nothing.
+# EIBFISR: Emotional Intensity-Based Feature and Insight Speech Ranker
 
-Key Features:
-Emotional Trait Scoring: The script assigns scores to various emotional traits like confidence, empathy, enthusiasm, and authority, based on keywords found in the speech. For instance, words such as "believe", "strong", or "assertive" may indicate confidence, while words like "care", "understand", or "support" could reflect empathy.
+EIBFISR is a Python-based open-source tool designed by Rees to analyze and rank speeches. It evaluates emotional intensity and effectiveness across specific traits such as **confidence**, **empathy**, **enthusiasm**, and **authority**. Using keyword-based analysis, it processes speech text to provide a quantitative assessment of emotional delivery, aiding in public speaking evaluations or speech improvement.
 
-Dynamic Trait Weight Adjustment: The script adjusts the importance of each emotional trait based on the context and frequency of related keywords. For example, if a speech uses many keywords related to "empathy" or "understanding", the score for empathy will be higher, reflecting the speaker's emotional tone.
+---
 
-Extensibility: The system is designed to be easily extendable, allowing for the addition of new emotional traits or adjustments to the scoring system. New keywords can be added to the configuration file, and the scoring logic can be modified to suit different applications.
+## Key Features
 
-Project Structure:
-main.py: The core script that processes the speech text, analyzes emotional traits, and outputs scores and ranks for the speech. It reads the speech input, applies keyword analysis, and generates the emotional trait rankings.
+### 1. Emotional Trait Scoring
+The script assigns scores to various emotional traits based on keywords found in the speech:
+- **Confidence:** Words like "believe", "strong", or "assertive".
+- **Empathy:** Words like "care", "understand", or "support".
+- **Enthusiasm:** Words like "excited", "passionate", or "energy".
+- **Authority:** Words like "command", "leader", or "expert".
 
-README.md: Documentation that explains how to use the Speech Ranker, configure emotional traits and keywords, and run the script. It also provides installation instructions and examples of how to execute the program.
+### 2. Dynamic Trait Weight Adjustment
+The script adjusts the importance of each trait based on the frequency and context of the related keywords. For example:
+- If a speech contains many empathy-related keywords, the **Empathy** score will be higher.
 
-requirements.txt: Lists the external Python dependencies (such as nltk for natural language processing or re for regular expressions) that need to be installed to run the Speech Ranker.
+### 3. Extensibility
+- Easily extendable to add new emotional traits or adjust scoring systems.
+- New keywords can be added to the configuration file, and scoring logic can be modified to suit different applications.
 
-How It Works:
-Keyword Matching: The script first tokenizes the speech text and searches for predefined keywords that are linked to specific emotional traits. For example, words like "I believe", "trust", and "strong" might trigger higher confidence scores, while "listen", "care", or "understand" may increase empathy scores.
+---
 
-Adjusting Trait Weights: Once keywords are detected, the script calculates the weight or score for each emotional trait. If a speech frequently uses keywords linked to empathy, the empathy score will rise, whereas a lack of relevant keywords might result in a lower score for that trait.
+## Project Structure
 
-Rank Generation: After analyzing the speech, the script generates a ranking for each emotional trait, providing insights into how strongly the speaker conveys each emotion. These rankings help assess the overall emotional effectiveness of the speech.
+### Files
+- **`main.py`**: The core script that processes speech text, analyzes emotional traits, and generates rankings.
+- **`README.md`**: Documentation that explains how to use the Speech Ranker, configure emotional traits, and run the script.
+- **`requirements.txt`**: Lists the external Python dependencies (such as `nltk`, `re`, etc.) needed to run the Speech Ranker.
 
-Customization: The system is flexible and can be adapted to different contexts. Users can update the main.py file to fine-tune the trait-to-keyword mappings, adjust trait importance, or add new emotional traits for analysis.
+---
 
-Execution: To run the EIBFISR, simply provide a speech in text format as an input. The script will then process the speech, adjust the trait weights based on keyword matches, and output the emotional rankings.
+## How It Works
 
-Use Cases:
-Public Speaking Evaluation: Assess the emotional effectiveness of speeches in competitions, debates, or presentations by ranking the emotional traits.
-Speech Coaching: Help speakers identify areas of strength and weakness in their emotional delivery, such as improving empathy or confidence.
-Sentiment Analysis: Apply the Speech Ranker to analyze the emotional tone of political speeches, corporate presentations, or motivational talks.
-AI/Chatbot Development: Integrate the Speech Ranker into virtual assistants or chatbots to enhance their ability to recognize and respond to emotional cues in human speech.
+### 1. Keyword Matching
+- The script tokenizes the speech text and searches for predefined keywords associated with specific emotional traits. For example:
+  - Words like "I believe", "trust", and "strong" will trigger higher confidence scores.
+  - Words like "listen", "care", or "understand" will increase empathy scores.
+
+### 2. Adjusting Trait Weights
+- After detecting the keywords, the script calculates the weight or score for each emotional trait.
+- If a speech frequently uses keywords related to empathy, the empathy score will rise, while a lack of relevant keywords will result in a lower score for that trait.
+
+### 3. Rank Generation
+- The script generates a ranking for each emotional trait, providing insights into how effectively the speaker conveys each emotion.
+  
+---
+
+## Customization
+
+EIBFISR is flexible and can be adapted for different contexts:
+- You can update the **`main.py`** file to fine-tune trait-to-keyword mappings.
+- Adjust trait importance or add new emotional traits for analysis.
+
+---
+
+## Installation and Setup
+
+### Prerequisites
+- Python 3.7 or higher
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ReesTheBeast/EIBFISR.git
+   cd EIBFISR
+Install the required dependencies:
+bash
+Copy code
+pip install -r requirements.txt
+Running the Tool
+Provide the speech text in a .txt file.
+Execute the script:
+bash
+Copy code
+python main.py --input speech.txt
+View the output:
+Emotional trait scores
+Rankings for each emotional trait
+Use Cases
+1. Public Speaking Evaluation
+Evaluate speeches from competitions, debates, or presentations to assess emotional effectiveness.
+2. Speech Coaching
+Identify areas of strength and weakness in emotional delivery (e.g., improving empathy or confidence).
+3. Sentiment Analysis
+Analyze the emotional tone of political speeches, corporate presentations, or motivational talks.
+4. AI/Chatbot Development
+Integrate the Speech Ranker into chatbots or virtual assistants to enhance emotional cue recognition.
+Example Output
+Here is a sample ranking for a speech:
+
+Emotional Trait	Score	Ranking
+Confidence	85	1
+Empathy	78	2
+Authority	72	3
+Enthusiasm	65	4
+Contributing
+Contributions are welcome! Feel free to submit issues or pull requests to improve the functionality.
+
+Fork the repository.
+Create a new branch for your feature:
+bash
+Copy code
+git checkout -b feature-name
+Commit and push your changes:
+bash
+Copy code
+git commit -m "Add feature description"
+git push origin feature-name
+Submit a pull request.
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Acknowledgments
+Designed and developed by Rees. Inspired by the need for data-driven emotional analysis in public speaking.
+
+Contact
+For questions or support, please contact:
+
+Email: reesschofield@icloud.com
 
 ![image](https://github.com/user-attachments/assets/d56c03fe-33e0-430b-84f8-c5bed08ee250)
